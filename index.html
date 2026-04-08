@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Luxury | Nueva Colección</title>
+    <style>
+        /* --- ESTILOS NÚCLEO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            color: #1a1a1a;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            background-color: #000;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: #888; }
+
+        /* --- SLIDER PRINCIPAL --- */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active { opacity: 1; z-index: 10; }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 20;
+            text-align: center;
+            color: #fff;
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        /* --- SECCIÓN DE PRODUCTOS --- */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .product-info h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #000;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .btn-buy {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-buy:hover { background: #333; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MENSWEAR</div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Ofertas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="slider-container">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1483393458019-411bc6bd104e?q=80&w=1600');">
+            <div class="overlay"></div>
+            <div class="slide-content"><h2>Nueva Temporada</h2></div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1600');">
+            <div class="overlay"></div>
+            <div class="slide-content"><h2>Estilo Clásico</h2></div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h3 class="section-title">Nuestros Productos</h3>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=500" alt="Ropa Deportiva">
+                <div class="product-info">
+                    <h4>Camiseta Performance Dry</h4>
+                    <span class="price">$25.00</span>
+                    <a href="#" class="btn-buy">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1620012253295-c05717e093d2?q=80&w=500" alt="Camisa">
+                <div class="product-info">
+                    <h4>Camisa Oxford Premium</h4>
+                    <span class="price">$45.00</span>
+                    <a href="#" class="btn-buy">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=500" alt="Hoodie">
+                <div class="product-info">
+                    <h4>Hoodie Urban Black</h4>
+                    <span class="price">$55.00</span>
+                    <a href="#" class="btn-buy">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=500" alt="Jaqueta">
+                <div class="product-info">
+                    <h4>Chaqueta de Cuero Eco</h4>
+                    <span class="price">$89.00</span>
+                    <a href="#" class="btn-buy">Añadir al carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MENSWEAR LUXURY - Pagos seguros vía PayPal / Stripe</p>
+    </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+
+        function nextSlide() {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
